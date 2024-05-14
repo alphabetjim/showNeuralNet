@@ -11,6 +11,14 @@ from tensorflow import keras
 import tensorflow_hub as hub
 
 
+# TODO: error on model load. Need to register custom objects.
+'''
+Error message:
+ValueError: Unknown layer: 'KerasLayer'. Please ensure you are using a `keras.utils.custom_object_scope` and that this object is included in the scope.
+ See https://www.tensorflow.org/guide/keras/save_and_serialize#registering_the_custom_object for details.
+
+'''
+
 input_image_path = 'static/images/dog.jpg'
 
 input_image = cv2.imread(input_image_path)
