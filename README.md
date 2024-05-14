@@ -1,0 +1,1 @@
+This repository documents the creation of a Flask frontend to showcase neural network projects that I have undertaken. Generally running within a conda environment.
