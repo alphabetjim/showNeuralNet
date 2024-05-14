@@ -5,6 +5,11 @@
 <div class="content">
 	<h1>Dog or Cat?</h1>	
 	<p>Upload an image containing a dog or a cat and the neural network will tell you which it contains.</p>
+
+	<form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <input type="submit" value="Upload">
+    </form>
 </div>
 
 {% endblock %}

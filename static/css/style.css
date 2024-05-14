@@ -1,0 +1,12 @@
+body {
+	font-family: sans-serif;
+}
+
+.userImage {
+	max-width: 40%;
+}
+
+.content {
+	margin: auto;
+	text-align: center;
+}
