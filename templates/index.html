@@ -2,14 +2,48 @@
 
 {% block content %}
 
-<div class="content">
-	<h1>Dog or Cat?</h1>	
-	<p>Upload an image containing a dog or a cat and the neural network will tell you which it contains.</p>
+<div class="content d-flex flex-column min-vh-100 min-vw-100">
+	<h1>Dog or Cat?</h1>
+	<h2>Neural Network Dog/Cat Image Classifier</h2>
+	<div class="row d-flex flex-grow-1 justify-content-center align-items-center">
+		<div class="col-12 col-md-6">
+			<h3>Instructions</h3>
 
-	<form action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="image">
-        <input type="submit" value="Upload">
-    </form>
+			<p>Upload an image containing a dog or a cat and the neural network will tell you which it contains.</p>
+
+			<form action="/upload" method="POST" enctype="multipart/form-data">
+		        <input type="file" name="image">
+		        <input type="submit" value="Upload">
+		    </form>
+		</div>
+		<div class="col-12 col-md-6 text-center">
+			<h3>About this Tool</h3>
+		    <p>
+		    	The neural network underpinning this website was developed in Python by 
+		    	<span>
+		    		<a href="https://github.com/alphabetjim" class="href"></a>
+		    	</span>James Bridgwater Court based upon a 
+				<span>
+			    	<a href="https://www.youtube.com/watch?v=pHq29zi4Gr0&list=PLfFghEzKVmjvyT7wdfDJSHhS0FdF8jd-U&index=5" class="href">
+			    		walkthrough
+			    	</a>
+			    </span> by YouTube user Siddhardhan, using the dataset for the Kaggle 
+			    <span>
+			    	<a href="https://www.kaggle.com/c/dogs-vs-cats" class="href">
+			    		Dogs vs Cats
+			    	</a>
+			    </span> competition and employing transfer learning with the 
+			    <span>
+			    	<a href="https://keras.io/api/applications/mobilenet/" class="href">MobileNetV2</a>
+			    </span>
+			    image classification model from Keras. The front-end is implemented using Flask.
+			</p>
+		</div>
+	</div>
+		
+	
+
+    
 </div>
 
 {% endblock %}

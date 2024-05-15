@@ -2,6 +2,18 @@ body {
 	font-family: sans-serif;
 }
 
+p {
+	font-size: 1.3rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+.footerlink {
+	color: black;
+}
+
 .userImage {
 	max-width: 40%;
 }
@@ -9,4 +21,35 @@ body {
 .content {
 	margin: auto;
 	text-align: center;
+	padding-top: 5px;
+}
+
+.content p {
+	max-width: 80%;
+	margin: auto;
+}
+
+.contentrow {
+	align-self: center;
+}
+
+.prediction {
+	background-color: #6c757d;
+	width: 5rem;
+	margin: auto;
+	color: #fafafa;
+}
+
+.backbutton {
+	background-color: #99a4ad;
+	color: #fafafa;
+	width: fit-content;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin: auto;
+	margin-top: 20px;
+}
+
+.backbutton a {
+	text-decoration: none!important;
 }

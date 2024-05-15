@@ -44,7 +44,7 @@ def upload():
 			prediction = predict(image_path)
 			print(prediction)
 	        
-			return render_template('uploaded.html', image = new_image)
+			return render_template('uploaded.html', image = new_image, prediction = prediction)
 		else:
 			return "Invalid file format", 400
 	else:

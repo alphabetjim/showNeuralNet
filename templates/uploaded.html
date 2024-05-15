@@ -2,12 +2,29 @@
 
 {% block content %}
 
-<div class="content">
-	<h1>Image Uploaded!</h1>
-	<p>Here is your image: the path is {{ image.filename }}</p>
-	<img src="{{ image.filename }}" alt="User-uploaded image" class="userImage">
-	<h4>Neural Network:</h4>
-	<p>The neural network "thinks" that this image contains a CAT|DOG</p>
+<div class="content d-flex flex-column min-vh-100 min-vw-100">
+	<h1>Image Uploaded</h1>
+	<div class="row">
+		<div class="col-12">
+			<img src="{{ image.filename }}" alt="User-uploaded image" class="userImage">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 mt-5">
+			<h2>Neural Network:</h2>
+			<p><strong>This image contains a...</strong></p>
+			<div class="prediction">
+				<p><strong>{{ prediction|title }}!</strong></p>
+			</div>
+			<a href='/'>
+		    	<div class='backbutton'>
+		        	<p><strong>Try another image</strong></p>
+		    	</div>
+		    </a>
+		</div>
+	</div>
+	
+	
 </div>
 
 {% endblock %}
