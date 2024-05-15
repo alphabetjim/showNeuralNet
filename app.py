@@ -1,6 +1,8 @@
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+# import prediction using trained NN
+from predict import predict
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///nnimages.db'
@@ -37,6 +39,10 @@ def upload():
 			new_image = Image(filename=image_path)
 			db.session.add(new_image)
 			db.session.commit()
+            
+            # Run model on uploaded image
+			prediction = predict(image_path)
+			print(prediction)
 	        
 			return render_template('uploaded.html', image = new_image)
 		else:
