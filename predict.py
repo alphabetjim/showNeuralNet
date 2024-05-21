@@ -42,11 +42,7 @@ def predict(input_image_url = 'https://res.cloudinary.com/ddfqaz73q/image/upload
     # run on image
     input_prediction = reloaded.predict(image_reshaped)
     
-    print(input_prediction)
-    
     input_pred_label = np.argmax(input_prediction)
-    
-    print(input_pred_label)
     
     cat_or_dog = ''
     
@@ -54,8 +50,6 @@ def predict(input_image_url = 'https://res.cloudinary.com/ddfqaz73q/image/upload
       cat_or_dog = 'cat'
     else:
       cat_or_dog = 'dog'
-      
-    print(cat_or_dog)
       
       
     return cat_or_dog
