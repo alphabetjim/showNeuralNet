@@ -9,6 +9,7 @@ import glob
 import tensorflow as tf
 from tensorflow import keras
 import tensorflow_hub as hub
+import urllib
 
 
 # TODO: error on model load. Need to register custom objects.
@@ -23,9 +24,12 @@ ValueError: Unknown layer: 'KerasLayer'. Please ensure you are using a `keras.ut
 export_path = 'savedModel'
 reloaded = tf.keras.models.load_model(export_path)
 
-def predict(input_image_path = 'static/images/dog.jpg'):
+def predict(input_image_url = 'https://res.cloudinary.com/ddfqaz73q/image/upload/f_auto,q_auto/download_cr75sh'):
     
-    input_image = cv2.imread(input_image_path)
+    #input_image = cv2.imread(input_image_path)
+    url_response = urllib.request.urlopen(input_image_url)
+    img_array = np.array(bytearray(url_response.read()), dtype=np.uint8)
+    input_image = cv2.imdecode(img_array, -1)
     
     # cv2.imshow(input_image)
     
